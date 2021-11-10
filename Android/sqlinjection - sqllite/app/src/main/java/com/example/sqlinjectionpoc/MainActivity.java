@@ -41,10 +41,20 @@ public class MainActivity extends AppCompatActivity {
         else {
             Cursor cursor;
             //Testing raw query - exposed to 1' or '1'='1
-            //cursor = db.rawQuery("SELECT * FROM usertable WHERE _id='" + info + "'", null);
+            /*
+            cursor = db.rawQuery("SELECT * FROM usertable WHERE _id='" + info + "'", null);
+            cursor.moveToFirst();
+            */
+
             //Testing raw query with parameterized input - failed to 1' or '1'='1
-            //String m_argv[] = {input.getText().toString()};
+            /*
+            String m_argv[] = {input.getText().toString()};
             //cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id=?", m_argv);
+            cursor.moveToFirst();
+            */
+
+            //Testing an update before the vulnerable select - delete and select don t do nothing
+            /*
             String m_argv[] = {input.getText().toString()};
             ContentValues cv = new ContentValues();
             cv.put("username","male");
@@ -53,6 +63,17 @@ public class MainActivity extends AppCompatActivity {
             db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
             cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id='" + info + "'", null);
             cursor.moveToFirst();
+            */
+            //Testing replace in android
+            String m_argv[] = {input.getText().toString()};
+            ContentValues cv = new ContentValues();
+            cv.put("username","male");
+            cv.put("password","UNION Select * from usertable;--");
+            //cv.put("password","delete from usertable where _id =2");
+            db.replace("usertable","1",cv);
+            cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id='" + info + "'", null);
+            cursor.moveToFirst();
+
             String result = "";
             while (!cursor.isAfterLast()) {
                 result += "id:" + cursor.getInt(0) + "\r\n" + "user:" + cursor.getString(1) + "\r\n" + "pass:" + cursor.getString(2) + "\r\n";
