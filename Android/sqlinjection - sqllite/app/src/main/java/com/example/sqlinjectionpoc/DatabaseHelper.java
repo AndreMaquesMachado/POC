@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase.CursorFactory;
         import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TB_NAME="usertable";
-    public static final String ID="_id";
+    public static final String ID="id";
     public static final String USERNAME="username";
     public static final String PASSWORD="password";
     public DatabaseHelper(Context context, String name, CursorFactory factory,
