@@ -54,26 +54,28 @@ public class MainActivity extends AppCompatActivity {
             */
 
             //Testing an update before the vulnerable select - delete and select don t do nothing
-            /*
+
             String m_argv[] = {input.getText().toString()};
             ContentValues cv = new ContentValues();
-            cv.put("username","male");
+            cv.put("username","';--");
             //cv.put("password","1; Select * from usertable;");
-            cv.put("password","delete from usertable where id =2");
-            db.update("usertable",cv,"id=?",new String[]{String.valueOf(1)});
-            cursor = db.rawQuery("SELECT * FROM  usertable WHERE id='" + info + "'", null);
+            cv.put("password","passwordforte");
+            db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
+            cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id='" + info + "'", null);
             cursor.moveToFirst();
-            */
+
             //Testing replace in android
-            String m_argv[] = {input.getText().toString()};
+            /*
+             String m_argv[] = {input.getText().toString()};
+
             ContentValues cv = new ContentValues();
-            cv.put("username","male");
+            cv.put("username",";--");
             cv.put("password",";--");
             //cv.put("password","delete from usertable where _id =2");
             db.replace("usertable","1",cv);
             cursor = db.rawQuery("SELECT * FROM  usertable WHERE id='" + info + "'", null);
             cursor.moveToFirst();
-
+            */
             String result = "";
             while (!cursor.isAfterLast()) {
                 result += "id:" + cursor.getInt(0) + "\r\n" + "user:" + cursor.getString(1) + "\r\n" + "pass:" + cursor.getString(2) + "\r\n";
