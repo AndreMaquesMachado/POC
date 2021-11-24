@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         else {
             Cursor cursor;
             //Testing raw query - exposed to 1' or '1'='1
-            /*
+
             cursor = db.rawQuery("SELECT * FROM usertable WHERE id='" + info + "'", null);
             cursor.moveToFirst();
-            */
+
 
             //Testing raw query with parameterized input - failed to 1' or '1'='1
             /*
@@ -55,19 +55,20 @@ public class MainActivity extends AppCompatActivity {
 
             //Testing an update before the vulnerable select - delete and select don t do nothing
 
-            String m_argv[] = {input.getText().toString()};
+            /*String m_argv[] = {input.getText().toString()};
             ContentValues cv = new ContentValues();
             cv.put("username","';--");
             //cv.put("password","1; Select * from usertable;");
             cv.put("password","passwordforte");
-            db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
+            //db.rawQueryWithFactory()
+            db.execSQL("delete from usertable where _id =2");
+            //db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
             cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id='" + info + "'", null);
             cursor.moveToFirst();
-
+*/
             //Testing replace in android
             /*
-             String m_argv[] = {input.getText().toString()};
-
+            String m_argv[] = {input.getText().toString()};
             ContentValues cv = new ContentValues();
             cv.put("username",";--");
             cv.put("password",";--");

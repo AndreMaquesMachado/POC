@@ -10,6 +10,9 @@ import database.ArmazenamentoValores;
 import database.Smarthome;
 //import database.SmarthomeRowMapper;
 import database.mysql.DatabaseMysql;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 
 import java.awt.image.SampleModel;
@@ -63,10 +66,14 @@ public class mainJavafx  {
         ds.setUsername("root");
         ds.setPassword("password");
         JdbcTemplate jtm = new JdbcTemplate(ds);
-        String sql = "SELECT * from smarthome where id_smarthome = ? ";
-        Smarthome car = (Smarthome) jtm.queryForObject(sql, new Object[]{"1' or '1' ='1"}, new SmarthomeRowMapper());
-
-        System.out.println(car.toString());
+        //String sql = "SELECT * from smarthome where id_smarthome = ? ";
+        //Smarthome car = (Smarthome) jtm.queryForObject(sql, new Object[]{"1' or '1' ='1"}, new SmarthomeRowMapper());
+        String sql = String.format("SELECT * from smarthome where id_smarthome = ?");
+        String id = "1";
+        Smarthome smarthome = new Smarthome();
+        SqlParameterSource named = new BeanPropertySqlParameterSource(smarthome);
+        String car = (String)jtm.queryForObject(sql, new Object[]{"1' or '1' ='1"}, String.class);
+        System.out.println(car);
         System.out.println(sql);
         //System.out.println(value);
         //GET os dados da smarthome ao servidor central
