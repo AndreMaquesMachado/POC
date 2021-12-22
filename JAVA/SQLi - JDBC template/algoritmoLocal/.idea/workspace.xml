@@ -7,13 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../bufferedreader/src/main/java/BufferedReaderExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Android/sqlinjection - sqllite/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../Android/sqlinjection - sqllite/app/src/main/java/com/example/sqlinjectionpoc/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Android/sqlinjection - sqllite/app/src/main/java/com/example/sqlinjectionpoc/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SQLi - jdbc template maven/src/main/java/configs/IP_global.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SQLi - jdbc template maven/src/main/java/configs/Smarhomedata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SQLi - jdbc template maven/src/main/java/determinateRandom/RandomDivisao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../SQLi - jdbc template maven/src/main/java/mainJavafx.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQLi - jdbc template maven/src/main/java/mainJavafx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../SQLi - jdbc template maven/target/classes/mainJavafx.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../SQLi - jdbc template maven/target/classes/mainJavafx.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +312,8 @@
       <workItem from="1632838201818" duration="740000" />
       <workItem from="1635946010684" duration="1662000" />
       <workItem from="1636625118512" duration="5395000" />
-      <workItem from="1637748144472" duration="503000" />
+      <workItem from="1637748144472" duration="687000" />
+      <workItem from="1640172224513" duration="392000" />
     </task>
     <servers />
   </component>

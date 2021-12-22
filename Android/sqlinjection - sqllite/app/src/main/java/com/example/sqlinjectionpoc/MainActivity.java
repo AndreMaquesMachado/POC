@@ -42,30 +42,32 @@ public class MainActivity extends AppCompatActivity {
             Cursor cursor;
             //Testing raw query - exposed to 1' or '1'='1
 
-            cursor = db.rawQuery("SELECT * FROM usertable WHERE id='" + info + "'", null);
+            /*
+            cursor = db.rawQuery("SELECT * FROM usertable WHERE _id='" + info + "'", null);
             cursor.moveToFirst();
-
+            */
 
             //Testing raw query with parameterized input - failed to 1' or '1'='1
+
             /*
             String m_argv[] = {input.getText().toString()};
-            //cursor = db.rawQuery("SELECT * FROM  usertable WHERE id=?", m_argv);
+            cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id=?", m_argv);
             cursor.moveToFirst();
             */
 
             //Testing an update before the vulnerable select - delete and select don t do nothing
 
-            /*String m_argv[] = {input.getText().toString()};
+            String m_argv[] = {input.getText().toString()};
             ContentValues cv = new ContentValues();
             cv.put("username","';--");
             //cv.put("password","1; Select * from usertable;");
-            cv.put("password","passwordforte");
+            cv.put("password","newpassword");
             //db.rawQueryWithFactory()
-            db.execSQL("delete from usertable where _id =2");
-            //db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
+            //db.execSQL("delete from usertable where _id =2");
+            db.update("usertable",cv,"_id=?",new String[]{String.valueOf(1)});
             cursor = db.rawQuery("SELECT * FROM  usertable WHERE _id='" + info + "'", null);
             cursor.moveToFirst();
-*/
+
             //Testing replace in android
             /*
             String m_argv[] = {input.getText().toString()};
